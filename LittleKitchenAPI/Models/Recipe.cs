@@ -13,7 +13,11 @@ public class Recipe
     [Required]
     [StringLength(500, MinimumLength = 10)]
     public string Description { get; set; }
+
+    [Required]
     public string Ingredients { get; set; }
+
+    [Required]
     public string Steps { get; set; }
 
     [DataType(DataType.Date)]
