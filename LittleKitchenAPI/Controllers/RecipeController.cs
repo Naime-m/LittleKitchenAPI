@@ -30,6 +30,14 @@ namespace LittleKitchenAPI.Controllers
             return recipe == null ? NotFound() : Ok(recipe);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Create(Recipe recipe)
+        {
+            await _context.Recipes.AddAsync(recipe);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetById), new { id = recipe.id }, recipe);
+        }
+
 
     }
 }
