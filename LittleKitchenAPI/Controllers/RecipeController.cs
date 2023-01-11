@@ -55,7 +55,7 @@ namespace LittleKitchenAPI.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var recipeToDelete = await _context.Recipes.FindAsync(id);
-            if (recipeToDelete != null)
+            if (recipeToDelete == null)
             {
                 return NotFound();
             }
