@@ -39,6 +39,29 @@ namespace LittleKitchenAPI.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(int id, recipe)
+        public async Task<IActionResult> Update(int id, Recipe recipe)
+        {
+            if (id != recipe.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(recipe).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var recipeToDelete = await _context.Recipes.FindAsync(id);
+            if (recipeToDelete != null)
+            {
+                return NotFound();
+            }
+            _context.Recipes.Remove(recipeToDelete);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }
