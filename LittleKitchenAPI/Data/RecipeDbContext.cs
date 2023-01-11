@@ -9,6 +9,6 @@ public class RecipeDbContext : DbContext
 	{
 	}
 
-	DbSet<Recipe> Recipes { get; set; }
+	public DbSet<Recipe> Recipes { get; set; }
 
 }
