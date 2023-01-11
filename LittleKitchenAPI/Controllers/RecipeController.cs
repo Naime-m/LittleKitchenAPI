@@ -35,9 +35,10 @@ namespace LittleKitchenAPI.Controllers
         {
             await _context.Recipes.AddAsync(recipe);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetById), new { id = recipe.id }, recipe);
+            return CreatedAtAction(nameof(GetById), new { id = recipe.Id }, recipe);
         }
 
-
+        [HttpPut]
+        public async Task<IActionResult> Update(int id, recipe)
     }
 }
