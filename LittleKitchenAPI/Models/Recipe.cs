@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace LittleKitchenAPI.Models;
 
@@ -31,6 +33,7 @@ public class Recipe
 public enum CourseType
 {
     Appetizer,
+    [Display(Name = "Main Course")]
     MainCourse,
     Dessert,
     Beverage
@@ -41,5 +44,6 @@ public enum Category
     Vegan,
     Meat, 
     Fish,
+    [Display(Name = "Gluten Free")]
     GlutenFree
 }
