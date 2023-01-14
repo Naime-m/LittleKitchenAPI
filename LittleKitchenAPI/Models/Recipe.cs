@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -30,20 +32,20 @@ public class Recipe
     public Category? Category { get; set; }
 }
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CourseType
 {
     Appetizer,
-    [Display(Name = "Main Course")]
     MainCourse,
     Dessert,
     Beverage
 }
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum Category
 {
     Vegan,
     Meat, 
     Fish,
-    [Display(Name = "Gluten Free")]
     GlutenFree
 }
