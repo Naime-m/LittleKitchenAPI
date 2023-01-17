@@ -20,6 +20,7 @@ namespace LittleKitchenAPI.Migrations
                     Ingredients = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Steps = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CourseType = table.Column<int>(type: "int", nullable: true),
                     Category = table.Column<int>(type: "int", nullable: true)
                 },

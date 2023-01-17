@@ -27,7 +27,7 @@ public class Recipe
     [DataType(DataType.Date)]
     public DateTime Date { get; set; }
 
-    public string ImageUrl { get; set; }
+    public string? ImageUrl { get; set; }
 
     public CourseType? CourseType  { get; set;}
 
