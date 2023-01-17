@@ -32,20 +32,18 @@ public class Recipe
     public Category? Category { get; set; }
 }
 
-[JsonConverter(typeof(StringEnumConverter))]
 public enum CourseType
 {
-    Appetizer,
     MainCourse,
+    Appetizer,
     Dessert,
     Beverage
 }
 
-[JsonConverter(typeof(StringEnumConverter))]
 public enum Category
 {
+    GlutenFree,
     Vegan,
     Meat, 
-    Fish,
-    GlutenFree
+    Fish
 }
