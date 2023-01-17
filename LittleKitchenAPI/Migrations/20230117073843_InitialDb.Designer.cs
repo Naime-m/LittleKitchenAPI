@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LittleKitchenAPI.Migrations
 {
     [DbContext(typeof(RecipeDbContext))]
-    [Migration("20230110225739_Initial-Database")]
-    partial class InitialDatabase
+    [Migration("20230117073843_InitialDb")]
+    partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
